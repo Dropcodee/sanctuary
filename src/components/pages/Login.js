@@ -27,6 +27,7 @@ class Login extends Component {
         } else {
           this.setState({ login: result.data.success });
           console.log(this.state.login.success_text);
+          this.props.history.push("/hyveadmin");
         }
       })
       .catch(err => {
