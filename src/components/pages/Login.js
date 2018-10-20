@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import avatar from "../../img/avatar.svg";
 import { UserLogin } from "../../Api/authAction";
 class Login extends Component {
   constructor() {
