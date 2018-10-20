@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../../img/avatar.svg";
-import axios from "axios";
+import { AddMember } from "../../Api/authAction";
 class Newregister extends Component {
   constructor() {
     super();
@@ -83,20 +83,6 @@ class Newregister extends Component {
   };
 
   // Function to Send new Member to the back-end
-  newMember = newMem => {
-    axios
-      .post(
-        "https://sanc-server.herokuapp.com/public/add",
-        newMem
-      )
-      .then(res => {
-        this.setState({ newMember: res.data });
-        console.log(this.state.newMember);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
 
   // Submit Function for the form
   submit = e => {
@@ -150,16 +136,16 @@ class Newregister extends Component {
           error: "Password must contain at least one uppercase letter (A-Z)"
         };
         this.setState({ error: err });
-      } 
-      
+      }
+
       // Check if the Password is the same with the name
       else if (this.state.password === this.state.name) {
         const err = {
           error: "Password must be the same character with your name"
         };
         this.setState({ error: err });
-      } 
-      
+      }
+
       // Put the member in an Object
       else {
         const newMem = {
@@ -178,7 +164,7 @@ class Newregister extends Component {
         };
         console.log(newMem);
 
-        this.newMember(newMem);
+        AddMember(newMem, this.props.history);
       }
     } else {
       const err = {
