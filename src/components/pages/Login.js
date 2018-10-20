@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import avatar from "../../img/avatar.svg";
-import axios from "axios";
+import { UserLogin } from "../../Api/authAction";
 class Login extends Component {
   constructor() {
     super();
@@ -15,21 +14,6 @@ class Login extends Component {
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-  };
-
-  Login = login => {
-    axios
-      .post(
-        "https://sanc-server.herokuapp.com/public/login",
-        login
-      )
-      .then(result => {
-        this.setState({ login: result.data });
-        console.log(this.state);
-      })
-      .catch(err => {
-        console.log(err);
-      });
   };
 
   submit = e => {
@@ -46,7 +30,7 @@ class Login extends Component {
         reg_no: this.state.reg_no,
         password: this.state.password
       };
-      this.Login(login);
+      UserLogin(login, this.props.history);
     }
   };
   render() {
@@ -110,4 +94,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;
