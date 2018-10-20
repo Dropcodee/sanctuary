@@ -7,6 +7,7 @@ import Newregister from "./components/pages/NewRegister";
 import Existingregister from "./components/pages/Existing";
 import Login from "./components/pages/Login";
 import UserAdmin from "./components/pages/userAdmin";
+import $ from "jquery";
 import "./App.css";
 
 class App extends Component {

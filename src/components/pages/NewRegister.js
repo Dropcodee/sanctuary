@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../../img/avatar.svg";
 import { AddMember } from "../../Api/authAction";
+import "materialize-css";
+import M from "materialize-css/dist/js/materialize.min";
+import "materialize-css/dist/css/materialize.css";
 class Newregister extends Component {
   constructor() {
     super();
@@ -22,7 +25,12 @@ class Newregister extends Component {
       newMember: {}
     };
   }
-
+  componentDidMount(defaultProps) {
+    document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll("select");
+      var instances = M.FormSelect.init(elems, defaultProps);
+    });
+  }
   // Creates a static property
   static defaultProps = {
     sex: ["Select gender", "Male", "Female"],

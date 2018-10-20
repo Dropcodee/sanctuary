@@ -36,13 +36,7 @@ class UserAdmin extends Component {
                 <div className="col s12 m4 l4">
                   <div className="card ">
                     <div className="card-content">
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Molestias minus explicabo labore, aliquam ad
-                        dignissimos placeat, tempore voluptates laborum voluptas
-                        rem et delectus at expedita ducimus nemo reiciendis
-                        consectetur. Non?
-                      </p>
+                      <p>Attendance</p>
                     </div>
                     <div className="card-action">
                       <h6>Attendance for the week</h6>
@@ -52,13 +46,7 @@ class UserAdmin extends Component {
                 <div className="col s12 m4 l4">
                   <div className="card">
                     <div className="card-content">
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Molestias minus explicabo labore, aliquam ad
-                        dignissimos placeat, tempore voluptates laborum voluptas
-                        rem et delectus at expedita ducimus nemo reiciendis
-                        consectetur. Non?
-                      </p>
+                      <p>Attendance</p>
                     </div>
                     <div className="card-action">
                       <h6>Attendance for the Month</h6>
@@ -68,13 +56,7 @@ class UserAdmin extends Component {
                 <div className="col s12 m4 l4">
                   <div className="card">
                     <div className="card-content">
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Molestias minus explicabo labore, aliquam ad
-                        dignissimos placeat, tempore voluptates laborum voluptas
-                        rem et delectus at expedita ducimus nemo reiciendis
-                        consectetur. Non?
-                      </p>
+                      <p>Attendance</p>
                     </div>
                     <div className="card-action">
                       <h6>Attendance for the Semester</h6>

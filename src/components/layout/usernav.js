@@ -8,8 +8,12 @@ class UserNav extends Component {
         <div>
           <ul id="sidenav-1" className="sidenav sidenav-fixed">
             <li>
-              <div className="responsive__logo">
-                <img src={logo} alt="Sanctuary Logo" />
+              <div className="">
+                <img
+                  src={logo}
+                  alt="Sanctuary Logo"
+                  style={{ width: "200px", height: "200px" }}
+                />
               </div>
             </li>
             <li className="push__down">
