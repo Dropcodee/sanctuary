@@ -45,11 +45,11 @@ class Login extends Component {
                 </div>
               </div>
               <div className="avatar">
-                <img
+                {/* <img
                   src={avatar}
                   alt="user avatar"
                   className="circle responsive-img"
-                />
+                /> */}
               </div>
               <div className="card-content">
                 <form action="" onSubmit={this.submit}>
