@@ -20,7 +20,7 @@ class Login extends Component {
   Login = login => {
     axios
       .post(
-        "http://localhost:8080/projects/sanctuary/server/public/login",
+        "https://sanc-server.herokuapp.com/public/login",
         login
       )
       .then(result => {

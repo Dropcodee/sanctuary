@@ -86,7 +86,7 @@ class Newregister extends Component {
   newMember = newMem => {
     axios
       .post(
-        "http://localhost:8080/projects/sanctuary/server/public/add",
+        "https://sanc-server.herokuapp.com/public/add",
         newMem
       )
       .then(res => {
