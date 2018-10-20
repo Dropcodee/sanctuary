@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../../img/avatar.svg";
-import { UserLogin } from "../../Api/authAction";
 class Login extends Component {
   constructor() {
     super();
@@ -15,6 +14,24 @@ class Login extends Component {
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+
+  Login = login => {
+    axios
+      .post("https://sanc-server.herokuapp.com/public/login", login)
+      .then(result => {
+        if (result.data.error) {
+          this.setState({ login: result.data.error });
+          console.log(this.state.login.err_text);
+        } else {
+          this.setState({ login: result.data.success });
+          console.log(this.state.login.success_text);
+          this.props.history.push("/hyveadmin");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   submit = e => {
@@ -31,7 +48,7 @@ class Login extends Component {
         reg_no: this.state.reg_no,
         password: this.state.password
       };
-      UserLogin(login, this.props.history);
+      this.Login(login);
     }
   };
   render() {
@@ -65,6 +82,12 @@ class Login extends Component {
                       value={this.state.reg_no}
                       onChange={this.onChange}
                     />
+                    <span style={{ color: "#f00" }}>
+                      {this.state.reg_no === "" ? this.state.error.reg_no : ""}
+                      {this.state.login.err_text !== ""
+                        ? this.state.login.err_text
+                        : ""}
+                    </span>
                   </div>
                   <div className="input-field">
                     <i className="material-icons prefix"> lock_outline</i>
@@ -86,6 +109,11 @@ class Login extends Component {
                   >
                     Send
                   </button>
+                  <span className="green-text right">
+                    {this.state.login.success_text !== ""
+                      ? this.state.login.success_text
+                      : ""}
+                  </span>
                 </form>
               </div>
             </div>
@@ -95,5 +123,4 @@ class Login extends Component {
     );
   }
 }
-
 export default Login;

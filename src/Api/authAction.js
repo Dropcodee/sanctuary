@@ -14,11 +14,16 @@ export const AddMember = (memberID, history) => {
 
 //Calls login api for user login
 
-export const UserLogin = (loginID, history) => {
+export const UserLogin = (loginID, history, login_error) => {
   axios
     .post("https://sanc-server.herokuapp.com/public/login", loginID)
     .then(result => {
-      history.push("/hyveadmin");
+      if (result.data.error) {
+        this.setState({ login: result.data.error });
+        console.log(this.props.login_error.err_text);
+      } else {
+        history.push("/hyveadmin");
+      }
     })
     .catch(err => {
       console.log(err);
