@@ -17,8 +17,10 @@
             font-size: 40px
         button
             margin-top: 4em
+.terms__btn
+    margin-bottom: 1em
 /* STYLES FOR NEW REGISTRATION FORM*/
-    .card__form
+.card__form
     width: 80%
     margin: 3em auto
     &:hover
@@ -39,7 +41,7 @@
         height: 150px
 
     position: absolute
-    top: 5%
+    top: 2%
     left: 50%
     transform: translateX(-50%)
     bottom: 5%
@@ -52,9 +54,12 @@
         border-bottom: 1px solid $material-green !important
 .input-field input:focus + label,.input-field .prefix.active 
     color: $material-green !important
-.card-content
-    margin: 4em auto
+.card__form 
+    animation-duration: 400ms
+    animation-delay: 400ms
+
 /* STYLES FOR NEW REGISTRATION FORM*/
+
 /* MEDIA QUERIES FOR ALL STYLES */
 @media screen and (min-width: $break-small) 
     .bodydiv

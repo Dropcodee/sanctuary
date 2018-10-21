@@ -15,12 +15,16 @@
   .landing__wrapper .landing__content button {
     margin-top: 4em; }
 
-/* STYLES FOR NEW REGISTRATION FORM*/
- * .card__form
- * width: 80%
- * margin: 3em auto
- * &:hover
- *     box-shadow: $box__shadow__hover */
+.terms__btn {
+  margin-bottom: 1em; }
+
+/* STYLES FOR NEW REGISTRATION FORM */
+.card__form {
+  width: 80%;
+  margin: 3em auto; }
+  .card__form:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
 .top__section {
   background: #ACC0E9;
   height: 100px;
@@ -35,7 +39,7 @@
 
 .avatar {
   position: absolute;
-  top: 5%;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   bottom: 5%; }
@@ -55,8 +59,9 @@
 .input-field input:focus + label, .input-field .prefix.active {
   color: #4CAF50 !important; }
 
-.card-content {
-  margin: 4em auto; }
+.card__form {
+  animation-duration: 400ms;
+  animation-delay: 400ms; }
 
 /* STYLES FOR NEW REGISTRATION FORM */
 /* MEDIA QUERIES FOR ALL STYLES */

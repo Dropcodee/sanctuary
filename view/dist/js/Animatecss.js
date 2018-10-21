@@ -28,3 +28,15 @@ function jelloAnimate() {
       next();
     });
 }
+
+// INITIALIZING BARBA JS FOR PAGE TRANSITION
+$(document).ready(() => {
+  let transEffect = barbar.BaseTransition.extend({
+    start: function() {
+      this.newContainerLoading.then(val =>
+        this.fadeInNewContent($(this.newContainer))
+      );
+    }
+  });
+  Barba.Pjax.start();
+});
